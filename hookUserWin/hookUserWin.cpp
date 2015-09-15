@@ -8,8 +8,8 @@
 
 // Глобальные переменные:
 HINSTANCE hInst;								// текущий экземпляр
-TCHAR szTitle[MAX_LOADSTRING];					// Текст строки заголовка
-TCHAR szWindowClass[MAX_LOADSTRING];			// имя класса главного окна
+TCHAR szTitle[MAX_LOADSTRING] = TEXT("Translator");					// Текст строки заголовка
+TCHAR szWindowClass[MAX_LOADSTRING] = TEXT("Translator");			// имя класса главного окна
 
 // Отправить объявления функций, включенных в этот модуль кода:
 ATOM				MyRegisterClass(HINSTANCE hInstance);
@@ -61,7 +61,7 @@ int proceed(){
 	typedef int(*dllfunc)(void);
 	dllfunc InstallHook;
 	static HINSTANCE hinstDLL;
-	hinstDLL = LoadLibrary("dll_hook.dll");
+	hinstDLL = LoadLibrary(TEXT("dll_hook.dll"));
 	if (hinstDLL == NULL)
 		return 1;
 	InstallHook = (dllfunc)GetProcAddress(hinstDLL, "InstallHook");
