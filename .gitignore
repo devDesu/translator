@@ -3,3 +3,4 @@ Release/*
 ipch/*
 hookUserWin/Debug/*
 hookUserWin/Release/*
+*.rar
